@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="zh_TW">
+<html lang="en">
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	<title>後台登入</title>
+	<title>Color Admin | Register Page</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -22,63 +22,118 @@
 	<!-- ================== END BASE CSS STYLE ================== -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="../assets/plugins/pace/pace.min.js"></script>
+	<script src="../../../assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 </head>
-<body class="pace-top bg-white">
+<body class="pace-top bg-white">		
 	<!-- begin #page-loader -->
 	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
 	<!-- end #page-loader -->
 	
 	<!-- begin #page-container -->
 	<div id="page-container" class="fade">
-	    <!-- begin login -->
-        <div class="login login-with-news-feed">
+	    <!-- begin register -->
+        <div class="register register-with-news-feed">
             <!-- begin news-feed -->
             <div class="news-feed">
                 <div class="news-image">
-                    <img src="../../../assets/img/login-bg/bg-7.jpg" data-id="login-cover-image" alt="" />
+                    <!--<img src="../../../assets/img/login-bg/bg-8.jpg" alt="" />-->
                 </div>
                 <div class="news-caption">
-                    <h4 class="caption-title"><i class="fa fa-diamond text-success"></i> Announcing the Color Admin app</h4>
+                    <h4 class="caption-title"><i class="fa fa-edit text-success"></i> Announcing the Color Admin app</h4>
                     <p>
-                        Download the Color Admin app for iPhone®, iPad®, and Android™. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        As a Color Admin Apps administrator, you use the Color Admin console to manage your organization’s account, such as add new users, manage security settings, and turn on the services you want your team to access.
                     </p>
                 </div>
             </div>
             <!-- end news-feed -->
             <!-- begin right-content -->
             <div class="right-content">
-                <!-- begin login-header -->
-                <div class="login-header">
-                    <div class="brand">
-                        <span class="logo"></span>後台管理
-                        <!--<small>responsive bootstrap 3 admin template</small>-->
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-sign-in"></i>
-                    </div>
-                </div>
-                <!-- end login-header -->
-                <!-- begin login-content -->
-                <div class="login-content">
-                    <form action="validate" method="POST" class="margin-bottom-0">
-                        <div class="form-group m-b-15">
-                            <input type="text" name="username" class="form-control input-lg"  placeholder="帳號" />
+                <!-- begin register-header -->
+                <h1 class="register-header">
+                    Sign Up
+                    <small>Create your Color Admin Account. It’s free and always will be.</small>
+                </h1>
+                <!-- end register-header -->
+                <!-- begin register-content -->
+				
+                <div class="register-content">
+					<?php echo validation_errors(); ?>
+                    <form action="insertdata" method="POST" class="margin-bottom-0">						
+                        <label class="control-label">帳號</label>
+                        <div class="row row-space-10">
+                            <div class="col-md-8 m-b-15">								
+                                <input name="username" type="text" class="form-control"	placeholder="請輸入8~16碼英文或數字" />
+                            </div>                            
                         </div>
-                        <div class="form-group m-b-15">
-                            <input type="password" name="password"  class="form-control input-lg"   placeholder="Password" />
+						<label class="control-label">密碼</label>
+                        <div class="row row-space-10">
+                            <div class="col-md-6 m-b-15">								
+                                <input name="password" type="password" class="form-control" placeholder="輸入密碼" />
+                            </div>
+						</div>
+						<label class="control-label">確認密碼</label>
+						<div class="row row-space-10">
+							<div class="col-md-6 m-b-15">								
+                                <input name="repassword" type="password" class="form-control" placeholder="再次輸入密碼" />
+                            </div>
                         </div>
+						<label class="control-label">出生年月日</label>
+                        <div class="row row-space-10">
+                            <div class="col-md-4 m-b-15">								
+                                <input name="year" type="text" class="form-control" placeholder="年 例:1989" />
+                            </div>
+							<div class="col-md-4 m-b-15">								
+                                <input name="month" type="text" class="form-control"  placeholder="月" />
+                            </div>
+							<div class="col-md-4 m-b-15">								
+                                <input name="day" type="text" class="form-control"  placeholder="日" />
+                            </div>
+						</div>
+						<label class="control-label">身分證字號</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">								
+                                <input name="roc_id" type="text" class="form-control" placeholder="請輸入身分證 " />
+                            </div>
+                        </div>
+						<label class="control-label">手機</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">								
+                                <input name="phone" type="text" class="form-control"  placeholder="請輸入手機號碼 " />
+                            </div>
+                        </div>
+						<label class="control-label">銀行帳號</label>
+                        <div class="row row-space-10">
+                            <div class="col-md-4 m-b-15">								
+                                <input name="bank_number1" type="text" class="form-control" placeholder="請輸入銀行分行名稱 " />
+                            </div>
+							<div class="col-md-8 m-b-15">								
+                                <input name="bank_number2" type="text" class="form-control" placeholder="請輸入銀行帳號 " />
+                            </div>
+                        </div>
+                        <label class="control-label">Email</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">								
+                                <input name="email" type="text" class="form-control"  placeholder="請輸入Email "  />
+                            </div>
+                        </div>
+                        <label class="control-label">請輸入地址</label>
+                        <div class="row m-b-15">
+                            <div class="col-md-12">								
+                                <input name="address" type="text" class="form-control" placeholder="例:台北市大安區1號1樓" />
+                            </div>
+                        </div>                                            
+                        
                         <div class="checkbox m-b-30">
                             <label>
-                                <input type="checkbox" />記住我
+                                <input type="checkbox" /> By clicking Sign Up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Data Policy</a>, including our <a href="#">Cookie Use</a>.
                             </label>
                         </div>
-                        <div class="login-buttons">
-                            <button type="submit" class="btn btn-success btn-block btn-lg">我要登入</button>
+                        <div class="register-buttons">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">確認</button>
                         </div>
                         <div class="m-t-20 m-b-40 p-b-40">
-                            還不是會員?點擊 <a href="//124.219.73.151/CI/index.php/Register/test" class="text-success">這裡</a> 註冊
+                            已經成為會員了? 請按 <a href="//124.219.73.151/CI/index.php/login/index">這裡</a> 登入.
                         </div>
                         <hr />
                         <p class="text-center text-inverse">
@@ -86,14 +141,14 @@
                         </p>
                     </form>
                 </div>
-                <!-- end login-content -->
+                <!-- end register-content -->
             </div>
-            <!-- end right-container -->
+            <!-- end right-content -->
         </div>
-        <!-- end login -->
+        <!-- end register -->
         
         <!-- begin theme-panel -->
-        <!--<div class="theme-panel">
+        <div class="theme-panel">
             <a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
             <div class="theme-panel-content">
                 <h5 class="m-t-0">Color Theme</h5>
@@ -166,7 +221,7 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
         <!-- end theme-panel -->
 	</div>
 	<!-- end page container -->
@@ -177,9 +232,9 @@
 	<script src="../../../assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
 	<script src="../../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<!--[if lt IE 9]>
-		<script src="../assets/crossbrowserjs/html5shiv.js"></script>
-		<script src="../assets/crossbrowserjs/respond.min.js"></script>
-		<script src="../assets/crossbrowserjs/excanvas.min.js"></script>
+		<script src="../../../assets/crossbrowserjs/html5shiv.js"></script>
+		<script src="../../../assets/crossbrowserjs/respond.min.js"></script>
+		<script src="../../../assets/crossbrowserjs/excanvas.min.js"></script>
 	<![endif]-->
 	<script src="../../../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="../../../assets/plugins/jquery-cookie/jquery.cookie.js"></script>
